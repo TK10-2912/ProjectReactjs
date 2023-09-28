@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu } from 'antd';
+import { Image, Menu, Row } from 'antd';
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 import { useNavigate } from "react-router-dom";
 
@@ -30,18 +30,21 @@ function SideMenu() {
         ]),
     ];
     return (
-        <Menu
-            theme='dark'
-            onClick={({ key }) => {
-                navigate(key);
-            }}
-            style={{
-                width: "100%",
-                height: '100vh'
-            }}
-            mode="inline"
-            items={items}
-        />
+        <Row style = {{ backgroundColor: "#001529"}}>
+            <Image src={process.env.PUBLIC_URL+'logoApp.jpg'}></Image>
+            <Menu
+                theme='dark'
+                onClick={({ key }) => {
+                    navigate(key);
+                }}
+                style={{
+                    width: "100%",
+                    height: '100vh'
+                }}
+                mode="inline"
+                items={items}
+            />
+        </Row >
     );
 }
 
